@@ -31,15 +31,10 @@ int main(int argc, char *argv[])
         {{ ROFL00, ROFL01, ROFL02, ROFL03, ROFL04, ROFL05, ROFL06 },
          { ROFL10, ROFL11, ROFL12, ROFL13, ROFL14, ROFL15, ROFL16 }};
 
-    int x = 0;
-    int rofl_length = ROFLLENGTH;
+    int rofl_length;
     int rofl_center = LINES / 2 - ROFLHEIGHT / 2;
-    for (int i = 0; x < COLS; i++, x+=3) {
-        if (x + ROFLLENGTH > COLS) {
-            rofl_length = (ROFLLENGTH + COLS) - (x + ROFLLENGTH);
-        } else {
-            rofl_length = ROFLLENGTH;
-        }
+    for (int i = 0, x = 0; x < COLS; i++, x+=3) {
+        rofl_length = x + ROFLLENGTH < COLS ? ROFLLENGTH : COLS - x;
         for (int y = 0; y < ROFLHEIGHT; y++) {
             mvaddnstr(rofl_center + y, x, frames[i%2][y], rofl_length);
         }

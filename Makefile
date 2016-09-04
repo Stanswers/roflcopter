@@ -12,8 +12,14 @@
 # 
 ######################################
 
-CC=clang
+CC=gcc
 CFLAGS=-O
+BINARY=roflcopter
 
-rofl: roflcopter.c roflcopter.h
-	$(CC) $(CFLAGS) -o roflcopter roflcopter.c -lncurses
+.PHONY: roflcopter
+
+roflcopter: roflcopter.c roflcopter.h
+	$(CC) $(CFLAGS) -o $(BINARY) roflcopter.c -lncurses
+
+clean:
+	rm -f $(BINARY)
