@@ -2,6 +2,8 @@
 
 Nothing is more fun that watching a roflcopter fly!
 
+![FLY](img/solarized.gif "ROFLCHOPTER")
+
 ## Installation
 
 ```bash
