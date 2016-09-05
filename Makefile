@@ -15,11 +15,24 @@
 CC=gcc
 CFLAGS=-O
 BINARY=roflcopter
+MANPAGE=roflcopter.1.gz
 
-.PHONY: roflcopter
+.PHONY: all install uninstall clean
+
+all: roflcopter
 
 roflcopter: roflcopter.c roflcopter.h
 	$(CC) $(CFLAGS) -o $(BINARY) roflcopter.c -lncurses
 
+install: all
+	gzip < roflcopter.1 > roflcopter.1.gz
+	cp $(BINARY) /usr/bin/
+	cp roflcopter.1.gz /usr/share/man/man1/
+
+uninstall:
+	rm -f /usr/bin/$(BINARY) || true
+	rm -f /usr/share/man/man1/$(MANPAGE) || true
+
 clean:
-	rm -f $(BINARY)
+	rm -f $(BINARY) || true
+	rm -f $(MANPAGE) || true
