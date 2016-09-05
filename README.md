@@ -2,7 +2,7 @@
 
 Nothing is more fun that watching a roflcopter fly!
 
-![FLY](img/solarized.gif "ROFLCHOPTER")
+![FLY](img/roflcopter.gif "ROFLCHOPTER")
 
 ## Installation
 
