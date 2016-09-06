@@ -46,17 +46,22 @@ void play_roflcopter(const int refresh_rate, const int movement_increment)
 void print_help() {
     printf("Usage: roflcopter [OPTION]\n");
     printf("Watch a pretty roflcopter air show\n");
-    printf("  -h, --help             Print this help menu\n");
     printf("  -e, --evil             Run Evil Mode\n");
+    printf("  -f, --fast             Fly faster\n");
+    printf("  -h, --help             Print this help menu\n");
 }
 
 int main(int argc, char *argv[])
 {
     bool is_evil = false;
+    int movement_increment=3;
     for (int i = 1; i < argc; i++) {
         if (strcmp(argv[i], "-e") == 0 ||
             strcmp(argv[i], "--evil") == 0) {
             is_evil = true;
+        } else if (strcmp(argv[i], "-f") == 0 ||
+                   strcmp(argv[i], "--fast") == 0) {
+            movement_increment=9;
         } else if (strcmp(argv[i], "-h") == 0 ||
                    strcmp(argv[i], "--help") == 0) {
             print_help();
@@ -75,7 +80,7 @@ int main(int argc, char *argv[])
     leaveok(stdscr, TRUE);
     scrollok(stdscr, FALSE);
     do {
-        play_roflcopter(125000, 3);
+        play_roflcopter(125000, movement_increment);
     } while (is_evil);
     mvcur(0, COLS - 1, LINES - 1, 0);
     endwin();
