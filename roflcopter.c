@@ -15,13 +15,14 @@
 #include <curses.h>
 #include <signal.h>
 #include <stdio.h>
+#include <string.h>
 #include <unistd.h>
 #include "roflcopter.h"
 
-void play_roflcopter(int refresh_rate, int movement_increment);
+void play_roflcopter(const int refresh_rate, const int movement_increment);
 void print_help();
 
-void play_roflcopter(int refresh_rate, int movement_increment)
+void play_roflcopter(const int refresh_rate, const int movement_increment)
 {
     static char *frames[2][ROFLHEIGHT] =
         {{ ROFL00, ROFL01, ROFL02, ROFL03, ROFL04, ROFL05, ROFL06 },
@@ -45,22 +46,25 @@ void play_roflcopter(int refresh_rate, int movement_increment)
 void print_help() {
     printf("Usage: roflcopter [OPTION]\n");
     printf("Watch a pretty roflcopter air show\n");
-    printf("  -h  Print this help menu\n");
-    printf("  -e  Run Evil Mode\n");
+    printf("  -h, --help             Print this help menu\n");
+    printf("  -e, --evil             Run Evil Mode\n");
 }
 
 int main(int argc, char *argv[])
 {
     bool is_evil = false;
     for (int i = 1; i < argc; i++) {
-        if(*argv[i] == '-') {
-            while (*argv[i] != '\0') {
-                switch(*argv[i]++) {
-                    case 'e': is_evil = true; break;
-                    case 'h': print_help(); return 0;
-                    default: break;
-                }
-            }
+        if (strcmp(argv[i], "-e") == 0 ||
+            strcmp(argv[i], "--evil") == 0) {
+            is_evil = true;
+        } else if (strcmp(argv[i], "-h") == 0 ||
+                   strcmp(argv[i], "--help") == 0) {
+            print_help();
+            return 0;
+        } else {
+            printf("roflcopter: invalid option -- '%s'\n", argv[i]);
+            printf("Try 'roflcopter --help' for more information\n");
+            return 1;
         }
     }
     initscr();
