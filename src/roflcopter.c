@@ -17,10 +17,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#include "roflcopter.h"
 
-void play_roflcopter(const int refresh_rate, const int movement_increment);
-void print_help();
+#include <roflcopter/roflcopter.h>
 
 void play_roflcopter(const int refresh_rate, const int movement_increment)
 {

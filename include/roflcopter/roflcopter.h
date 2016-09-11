@@ -32,3 +32,6 @@
 #define ROFL16  "         ----------/    "
 
 #define ROFLDEL "                        "
+
+void play_roflcopter(const int refresh_rate, const int movement_increment);
+void print_help();
