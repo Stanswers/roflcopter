@@ -15,3 +15,9 @@ Session.vim
 # auto-generated tag files
 tags
 
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+Makefile
+build/

@@ -7,19 +7,15 @@ Nothing is more fun that watching a roflcopter fly!
 ## Compilation
 
 ```bash
+mkdir build
+cd build
+cmake .
 make
 ```
 
 ## Installation
-To be executed as root.
 ```bash
-make install
-```
-
-## Uninstall
-To be executed as root.
-```bash
-make uninstall
+sudo make install
 ```
 
 ## Further Reading
