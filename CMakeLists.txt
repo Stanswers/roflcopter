@@ -1,6 +1,7 @@
 cmake_minimum_required (VERSION 2.6)
 project (roflcopter)
 find_package (Curses REQUIRED)
+set (CMAKE_EXPORT_COMPILE_COMMANDS 1)
 include_directories (${CURSES_INCLUDE_DIRS})
 add_executable (roflcopter roflcopter.c)
 target_link_libraries (roflcopter ${CURSES_LIBRARIES})

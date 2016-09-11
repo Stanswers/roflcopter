@@ -9,7 +9,7 @@ Nothing is more fun that watching a roflcopter fly!
 ```bash
 mkdir build
 cd build
-cmake .
+cmake ../
 make
 ```
 
