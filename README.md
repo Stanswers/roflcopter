@@ -18,6 +18,11 @@ make
 sudo make install
 ```
 
+## Create RPM
+```bash
+make package
+```
+
 ## Further Reading
 
 0. [License](LICENSE.md)
