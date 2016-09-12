@@ -1,5 +1,6 @@
 language: c
 matrix:
+  include:
     - compiler: gcc
       addons:
         apt:
