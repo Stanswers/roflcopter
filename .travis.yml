@@ -1,6 +1,7 @@
 language: c
 matrix:
   include:
+    - complier: clang
     - compiler: gcc
       addons:
         apt:
@@ -8,8 +9,7 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - gcc-5
-      env: CC=/usr/bin/gcc-5
-    - complier: clang
+      env: GCC_VERSION=5
 
 script:
   - mkdir cmake && cd cmake && cmake .. && make
