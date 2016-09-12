@@ -22,4 +22,4 @@ matrix:
 script:
   - mkdir cmake
   - cd cmake
-  - cmake -DCMAKE_C_COMPILER=$COMPILER .. && make
+  - cmake -DCMAKE_C_COMPILER=$COMPILER .. && make package

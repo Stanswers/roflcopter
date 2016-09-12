@@ -1,9 +1,21 @@
 cmake_minimum_required(VERSION 2.6)
 
-project (roflcopter)
+project(roflcopter)
 set(VERSION "0.9.0")
-set (CMAKE_EXPORT_COMPILE_COMMANDS 1)
+set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+
+if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+  set (CMAKE_INSTALL_PREFIX /)
+endif()
 
 add_subdirectory(include)
 add_subdirectory(src)
 add_subdirectory(man)
+
+set(CPACK_GENERATOR "RPM")
+set(CPACK_PACKAGING_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX})
+set(CPACK_PACKAGE_NAME "roflcopter")
+set(CPACK_PACKAGE_VERSION ${VERSION})
+set(CPACK_PACKAGE_RELEASE 0)
+set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${CPACK_PACKAGE_RELEASE}.${CMAKE_SYSTEM_PROCESSOR}")
+include(CPack)
