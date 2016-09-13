@@ -3,6 +3,6 @@ add_custom_command (OUTPUT ${CMAKE_SOURCE_DIR}/build/man/roflcopter.1.gz
 	COMMAND gzip < ${CMAKE_SOURCE_DIR}/man/roflcopter.1 > ${CMAKE_SOURCE_DIR}/build/man/roflcopter.1.gz
 	VERBATIM
 )
-add_custom_target(roflcopter.1 ALL DEPENDS ${CMAKE_SOURCE_DIR}/build/man/roflcopter.1.gz)
+add_custom_target(roflcopter.1 ALL DEPENDS ${CMAKE_SOURCE_DIR}/build/man/roflcopter.1.gz SOURCES ${CMAKE_SOURCE_DIR}/man/roflcopter.1)
 install (FILES ${CMAKE_SOURCE_DIR}/build/man/roflcopter.1.gz DESTINATION usr/man/man1)
 
