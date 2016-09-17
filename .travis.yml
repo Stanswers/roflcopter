@@ -28,9 +28,10 @@ deploy:
   provider: releases
   api_key:
     secure: U5cagPi0xZirlIFi/IKi7OugqWq2a4MoZWYwkoFOjT5vd1RexeIjpd6p9ksdZlPEr9yQpmk05A2DOcT8cYSuG5Q+xA0e9aQdCraoVMcsYEapGM/JtRnvewaTGryZ23AMyT9Vznfyyu/Woss2JpBtUIqbXLDqxDtbQ3j39stOwcWrL++EgIvZ6FA8D42JckYw1gxnW1AqHQFgO2j8fTSEsjq008fbugmQsqIr3rGuEp8/ipsRdtVWU/M9uVQs1ylSFP9Gs724DWuEYT1MKQTA1t5DvMvUXpNZz73WmiPGyezwEY5B+0r0dfY+uJtc+KdQdBSYeVBtoviI1WTkUs59ZWSWn9/T7wNGYLz+3PDGgxPBx5mLlHzWq2imLyO4/+wMhu+5Oo7Po/ti66+l4X58iMJqpGwTuHKo7PDr3xatEy4V1yUIA6Dh0yOTb5bLZXcvYQwZ9aTUzG5gckhL4fl+IbftqA3wjGIFCL8u4xk780+Z8ehfw9KqC7RZ2zQUfMSiReRd6wjlM1L5tn4ssIbKGWoeNg44NL6SltGCD7ii+HNTakqmrtGjw/Gn2Qp4NFzZPKj2fLdvh34gyxoLxcjdgqWjKavhQv85hAYRvpedgYBR2B9iZLF4xS48CNP8QPTdkRANhKtY01/EAykZvd/axnLdx3QPv4dUsK7hVcWSLIw=
+  file_glob: true
   file:
-    - build/packages/roflcopter-0.1.1-beta-0.x86_64.rpm
-    - build/packages/roflcopter-0.1.1-beta-0.x86_64.deb
+    - build/packages/roflcopter-*.rpm
+    - build/packages/roflcopter-*.deb
   skip_cleanup: true
   overwrite: true
   on:
