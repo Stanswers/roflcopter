@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 project(roflcopter)
-set(VERSION "0.1.1-beta")
+set(VERSION "0.1.1")
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 
 set(ROFL_BUILD_PATH ${CMAKE_SOURCE_DIR}/build)
