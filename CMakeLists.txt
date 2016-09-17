@@ -15,7 +15,7 @@ add_subdirectory(man)
 
 set(CPACK_GENERATOR "TGZ;RPM;DEB")
 set(CPACK_OUTPUT_FILE_PREFIX ${ROFL_BUILD_PATH}/packages)
-set(CPACK_PACKAGE_RELEASE 0)
+set(CPACK_PACKAGE_RELEASE 1)
 set(CPACK_PACKAGE_CONTACT "Justin Helgesen <justinhelgesen@gmail.com>")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Nothing is more fun that watching a roflcopter fly!")
 set(CPACK_PACKAGE_DESCRIPTION "Watch a roflcopter")
